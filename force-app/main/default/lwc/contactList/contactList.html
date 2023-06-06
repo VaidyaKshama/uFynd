@@ -1,9 +1,9 @@
 <!--
   @description       : LWc to display contact details
-  @last modified on  : 06-06-2023
+  @last modified on  : 06-07-2023
 -->
 <template>
-
+    <lightning-card  title="Contacts" icon-name="standard:contact">
      <!-- Contact datatable -->
     <div>      
        <lightning-datatable
@@ -14,20 +14,22 @@
     </div>
 
     <!-- Navigation buttons -->
-    <div class="nav-buttons">
-         <!-- Display Previous Page button if not on the first page -->
-        <template if:false={isFirstPage}>
-            <button onclick={handlePrevPage}> Previous Page</button>
-        </template>
-        <!-- Display Next Page button if not on the last page -->
-        <template if:false={isLastPage}>
-            <button onclick={handleNextPage}> Next Page</button>
-        </template>
+    <div class="slds-align_absolute-center">
+        <div class="nav-buttons">
+            <!-- Display Previous Page button if not on the first page -->
+            <template if:false={isFirstPage}>
+                <button onclick={handlePrevPage}> Previous Page</button>
+            </template>
+            <!-- Display Next Page button if not on the last page -->
+            <template if:false={isLastPage}>
+                <button onclick={handleNextPage}> Next Page</button>
+            </template>
+        </div>
+        <div>
+            <h4>Total Records: {totalRecordCount} -- Page {pageNumber} of {totalPageCount}</h4>
+        </div>
     </div>
-
+    </lightning-card>
  <!-- Display Total records and page details -->
-    <div class="page-info">
-        Total Records: {totalRecordCount}
-        Page ({pageNumber}) of ({totalPageCount})
-    </div>
+    
 </template>

@@ -40,10 +40,9 @@ pageNumber = 1;
             if (this.contactList[index] !== undefined){
                 var element = this.contactList[index];
                 this.contatsToDisplay.push(element);
-            }
-            this.updatePageButtons();
-            
+            }            
         }
+        this.updatePageButtons();
     }
 
     handleNextPage(event){
@@ -66,7 +65,7 @@ pageNumber = 1;
         else {
             this.isFirstPage = false;
         }
-        if(this.pageNumber > this.totalPageCount){
+        if(this.pageNumber === this.totalPageCount){
             this.isLastPage = true;
         }
         else {
