@@ -3,22 +3,29 @@
   @last modified on  : 06-06-2023
 -->
 <template>
-    <div>
-        
-        <lightning-datatable
+
+     <!-- Contact datatable -->
+    <div>      
+       <lightning-datatable
                 key-field="id"
                 data={contatsToDisplay}
                 columns={columns}>
         </lightning-datatable>
     </div>
+
+    <!-- Navigation buttons -->
     <div class="nav-buttons">
+         <!-- Display Previous Page button if not on the first page -->
         <template if:false={isFirstPage}>
             <button onclick={handlePrevPage}> Previous Page</button>
         </template>
+        <!-- Display Next Page button if not on the last page -->
         <template if:false={isLastPage}>
             <button onclick={handleNextPage}> Next Page</button>
         </template>
     </div>
+
+ <!-- Display Total records and page details -->
     <div class="page-info">
         Total Records: {totalRecordCount}
         Page ({pageNumber}) of ({totalPageCount})

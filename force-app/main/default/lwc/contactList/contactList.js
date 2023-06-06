@@ -1,14 +1,9 @@
 import { LightningElement, wire } from 'lwc';
 import getContactList from "@salesforce/apex/ContactController.getContacts";
+
+// Define the columns for the datatable
 const columns = [
-    {
-        label: 'First Name',
-        fieldName: 'FirstName',
-        type: 'url',
-        typeAttributes: {label: { fieldName: 'FirstName' }, 
-        target: '_blank'},
-        sortable: true
-    },
+    {label: 'First Name', fieldName: 'FirstName' },
     { label: 'Last Name', fieldName: 'LastName' },
     { label: 'Email', fieldName: 'Email', type: 'email' }
 ];
@@ -24,13 +19,12 @@ isLastPage;
 totalRecordCount;
 totalPageCount;
 pageNumber = 1;
+
+// Wire the Apex method to fetch contact data
 @wire(getContactList) contacts ({ error, data }) {
     if (data) {
         let nameUrl;
-        this.contactList = data.map(row => { 
-            nameUrl = `/${row.Id}`;
-            return {...row , nameUrl} 
-        })  
+        this.contactList = data;
         this.totalRecordCount = this.contactList.length;
         this.totalPageCount = Math.ceil(this.totalRecordCount / this.recordsPerPage);
         this.updatePageButtons();

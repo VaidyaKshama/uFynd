@@ -1,18 +1,53 @@
-# Salesforce DX Project: Next Steps
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
 
-## How Do You Plan to Deploy Your Changes?
+## Installation
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+To use the Contact List LWC in your Salesforce org, follow these steps:
 
-## Configure Your Salesforce DX Project
+1. Ensure that you have the necessary permissions to create Lightning Web Components.
+2. Clone or download the code from the repository.
+3. Deploy the `ContactList` component to your Salesforce org using your preferred deployment method (e.g., Salesforce CLI, Metadata API, etc.).
+4. Assign the appropriate user permissions to access the `ContactList` component.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## Usage
 
-## Read All About It
+To use the Contact List component in a Lightning App or Lightning Record Page, follow these steps:
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+1. Open the page or app builder in Salesforce.
+2. Drag and drop the `ContactList` component onto the desired location.
+3. Save the changes and activate the page or app.
+4. The Contact List component will now display the contact details in a paginated datatable.
+
+
+# Contact List Lightning Web Component
+
+The Contact List Lightning Web Component is a Salesforce component that retrieves contact records using an Apex controller and displays them in a lightning-datatable.
+
+## Features
+
+- Retrieves a list of contacts using the `getContacts()` method in the `ContactController` Apex class.
+- Displays contact records in a table format using the `contactList` component based on the `lightning-datatable` base component.
+- Shows contact details such as First Name, Last Name, and Email in the table.
+- Provides a seamless integration between Apex and Lightning Web Components using the @wire decorator.
+- Supports pagination with Previous Page and Next Page buttons.
+- Shows total record count, current page number, and total page count.
+
+## Installation
+
+To use the Contact List Lightning Web Component in your Salesforce org, follow these steps:
+
+1. Clone or download the code from the repository.
+2. Deploy the `ContactController` Apex class to your Salesforce org using your preferred deployment method (e.g., Salesforce CLI, Metadata API, etc.).
+3. Deploy the `contactList` Lightning Web Component to your Salesforce org using your preferred deployment method.
+4. Deploy the `ufynd_App` Application to your Salesforce org using your preferred deployment method.
+5. Add the `contactList` component to the App page using the Lightning App Builder or by editing the source code of the App page.
+6. Save the changes and activate the App page.
+
+## Usage
+
+Once you have installed and added the Contact List Lightning Web Component to your Salesforce org, follow these steps to use it:
+
+1. Navigate to the ufynd_App page where you can see the Contact List component.
+2. The component will automatically retrieve the contact records using the `getContacts()` method in the `ContactController` Apex class.
+3. The contact records will be displayed in a table format, with columns for First Name, Last Name, and Email.
+
