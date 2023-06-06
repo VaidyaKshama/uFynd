@@ -31,7 +31,13 @@ The Contact List Lightning Web Component is a Salesforce component that retrieve
 - Provides a seamless integration between Apex and Lightning Web Components using the @wire decorator.
 - Supports pagination with Previous Page and Next Page buttons.
 - Shows total record count, current page number, and total page count.
+- The ContactControllerTest Apex test class is used to test the functionality of the ContactController
+- It ensure that the ContactController class is working as expected.
 
+## Features
+
+- Tests the `getContacts()` method of the `ContactController` class.
+- Covers positive scenarios to validate the successful retrieval of contact records.
 ## Installation
 
 To use the Contact List Lightning Web Component in your Salesforce org, follow these steps:
@@ -42,6 +48,7 @@ To use the Contact List Lightning Web Component in your Salesforce org, follow t
 4. Deploy the `ufynd_App` Application to your Salesforce org using your preferred deployment method.
 5. Add the `contactList` component to the App page using the Lightning App Builder or by editing the source code of the App page.
 6. Save the changes and activate the App page.
+7. Deploy the `ContactControllerTest` Apex test class to your Salesforce org using your preferred deployment method
 
 ## Usage
 
