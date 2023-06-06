@@ -1,0 +1,26 @@
+<!--
+  @description       : LWc to display contact details
+  @last modified on  : 06-06-2023
+-->
+<template>
+    <div>
+        
+        <lightning-datatable
+                key-field="id"
+                data={contatsToDisplay}
+                columns={columns}>
+        </lightning-datatable>
+    </div>
+    <div class="nav-buttons">
+        <template if:false={isFirstPage}>
+            <button onclick={handlePrevPage}> Previous Page</button>
+        </template>
+        <template if:false={isLastPage}>
+            <button onclick={handleNextPage}> Next Page</button>
+        </template>
+    </div>
+    <div class="page-info">
+        Total Records: {totalRecordCount}
+        Page ({pageNumber}) of ({totalPageCount})
+    </div>
+</template>
